@@ -1,0 +1,12 @@
+#root{
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    background-color:#0038656c;
+    background: linear-gradient(
+        #ffffff,
+        rgba(66, 2, 2, 0.732)
+    );
+
+}
+body{width:100%;}

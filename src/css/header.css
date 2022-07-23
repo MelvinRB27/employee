@@ -1,0 +1,35 @@
+.navbar {
+    background-color: #ffffff;
+}
+
+.ctnLogoHeader{
+    border-radius: 50%;
+}
+
+.ctnLogoHeader img{
+    width: 150px;
+}
+
+.containerListHeader{
+    width: 100%;
+    display:inline-block;
+}
+
+.containerNameLogo{
+    text-align: left;
+}
+
+.navbarSupportedContent{
+    display: flex;
+    justify-content: right;
+}
+
+@media (max-width: 880px) {  
+    .navbarSupportedContent{
+        justify-content: center;
+    }
+    .navbar-nav{
+        display: inline-block;
+        text-align: center;
+    }
+}
