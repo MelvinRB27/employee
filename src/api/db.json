@@ -1,0 +1,196 @@
+{
+  "employees": [
+    {
+      "id": 4023120,
+      "name": "Melvin",
+      "last_name": "Ruiz",
+      "date_birth": "01/02/2010",
+      "email": "melvin@gmail.com",
+      "phone": "809-000-0000",
+      "address": "Calle Juan Bosh",
+      "rol": "desarrollador"
+    },
+    {
+      "id": 4023121,
+      "name": "Helen",
+      "last_name": "Rosario",
+      "date_birth": "01/02/2010",
+      "email": "helen@gmail.com",
+      "phone": "809-000-0000",
+      "address": "Calle Juan Bosh",
+      "rol": "desarrollador"
+    },
+    {
+      "id": 4023122,
+      "name": "Gerson",
+      "last_name": "Gil",
+      "date_birth": "01/02/2010",
+      "email": "Gerson@gmail.com",
+      "phone": "809-000-0000",
+      "address": "Calle Juan Bosh",
+      "rol": "desarrollador"
+    },
+    {
+      "id": 4023123,
+      "name": "Josmar",
+      "last_name": "Reyes",
+      "date_birth": "01/02/2010",
+      "email": "Josmar@gmail.com",
+      "phone": "809-000-0000",
+      "address": "Calle Juan Bosh",
+      "rol": "desarrollador"
+    },
+    {
+      "id": 4023124,
+      "name": "Daniel",
+      "last_name": "Rodriguez",
+      "date_birth": "01/02/2010",
+      "email": "Daniel@gmail.com",
+      "phone": "809-000-0000",
+      "address": "Calle Juan Bosh",
+      "rol": "desarrollador"
+    },
+    {
+      "id": 4023125,
+      "name": "Angel",
+      "last_name": "Castro",
+      "date_birth": "01/02/2010",
+      "email": "Angel@gmail.com",
+      "phone": "809-000-0000",
+      "address": "Calle Juan Bosh",
+      "rol": "desarrollador"
+    },
+    {
+      "id": 4023126,
+      "name": "Leonel",
+      "last_name": "Herrera",
+      "date_birth": "01/02/2010",
+      "email": "Leonel@gmail.com",
+      "phone": "809-000-0000",
+      "address": "Calle Juan Bosh",
+      "rol": "desarrollador"
+    }
+  ],
+  "holidays": [
+    {
+      "id": 4023120,
+      "employee": "Melvin",
+      "id_employee": 4023120,
+      "starting_date": "01/02/2010",
+      "end_date": "01/02/2011"
+    },
+    {
+      "id": 4023121,
+      "employee": "Helen",
+      "id_employee": 4023121,
+      "starting_date": "01/02/2010",
+      "end_date": "01/02/2011"
+    },
+    {
+      "id": 4023122,
+      "employee": "Gerson",
+      "id_employee": 4023122,
+      "starting_date": "01/02/2010",
+      "end_date": "01/02/2011"
+    },
+    {
+      "id": 4023123,
+      "employee": "Josmar",
+      "id_employee": 4023123,
+      "starting_date": "01/02/2010",
+      "end_date": "01/02/2011"
+    },
+    {
+      "id": 4023124,
+      "employee": "Daniel",
+      "id_employee": 4023124,
+      "starting_date": "01/02/2010",
+      "end_date": "01/02/2011"
+    },
+    {
+      "id": 4023125,
+      "employee": "Angel",
+      "id_employee": 4023125,
+      "starting_date": "01/02/2010",
+      "end_date": "01/02/2011"
+    },
+    {
+      "id": 4023126,
+      "employee": "Leonel",
+      "id_employee": 4023126,
+      "starting_date": "01/02/2010",
+      "end_date": "01/02/2011"
+    }
+  ],
+  "payrolls": [
+    {
+      "id": 4023120,
+      "employee": "Melvin",
+      "id_employee": 4023120,
+      "payment_date": "01/02/2010",
+      "amount": 15200
+    },
+    {
+      "id": 4023121,
+      "employee": "Helen",
+      "id_employee": 4023121,
+      "payment_date": "01/02/2010",
+      "amount": 15200
+    },
+    {
+      "id": 4023122,
+      "employee": "Gerson",
+      "id_employee": 4023122,
+      "payment_date": "01/02/2010",
+      "amount": 15200
+    },
+    {
+      "id": 4023123,
+      "employee": "Josmar",
+      "id_employee": 4023123,
+      "payment_date": "01/02/2010",
+      "amount": 15200
+    },
+    {
+      "id": 4023124,
+      "employee": "Daniel",
+      "id_employee": 4023124,
+      "payment_date": "01/02/2010",
+      "amount": 15200
+    },
+    {
+      "id": 4023125,
+      "employee": "Angel",
+      "id_employee": 4023125,
+      "payment_date": "01/02/2010",
+      "amount": 15200
+    },
+    {
+      "id": 4023126,
+      "employee": "Leonel",
+      "id_employee": 4023126,
+      "payment_date": "01/02/2010",
+      "amount": 15200
+    }
+  ],
+  "users": [
+    {
+      "id": 0,
+      "user_name": "Melvin27",
+      "email": "melvin@gmail.com",
+      "password": "2727"
+    },
+    {
+      "user_name": "Hele02",
+      "email": "helen@gmail.com",
+      "password": "1020",
+      "id": 1
+    },
+    {
+      "user_name": "",
+      "email": "melvin@gmail.com",
+      "password": "2727",
+      "id": 2
+    }
+  ]
+}

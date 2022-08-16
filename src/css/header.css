@@ -22,14 +22,15 @@
 .navbarSupportedContent{
     display: flex;
     justify-content: right;
+    margin-right: 2%;
 }
 
-@media (max-width: 880px) {  
+@media (max-width: 712px) {  
     .navbarSupportedContent{
         justify-content: center;
     }
     .navbar-nav{
-        display: inline-block;
+        display: inline-grid;
         text-align: center;
     }
 }

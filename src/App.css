@@ -1,3 +1,19 @@
 .containerApp{
   text-align: center;
 }
+
+.containerApp .styles_scroll-to-top__2A70v {
+  background-color: red;
+  right: 40px;
+  bottom: 40px;
+  position: fixed;
+  z-index: 2;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: opacity 1s ease-in-out;
+  box-shadow: 0 9px 25px 0 rgb(132 128 177 / 28%);
+  border: none;
+  outline: none;
+}

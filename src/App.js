@@ -6,6 +6,7 @@ import Employees from './pages/employees';
 import Holidays from './pages/holidays';
 import Payroll from './pages/payroll';
 import Login from './pages/login';
+import PageNotFound from './pages/paneNotFound';
 import FormEmployee from './components/formEmployee';
 import FormHolidays from './components/formHolidays';
 import FormPayroll from './components/formPayroll';
@@ -18,21 +19,19 @@ const App = () =>  (
   <div className='containerApp'>
     <ScrollToTop/>
     <Header />
-    <br/>
 
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/employees" element={<Employees/>} />
       <Route path="/holidays" element={<Holidays/>} />
-      <Route path="/payroll" element={<Payroll/>} />
+      <Route path="/payrolls" element={<Payroll/>} />
       <Route path="/login" element={<Login/>} />
       <Route path="/add-employees" element={<FormEmployee/>} />
       <Route path="/add-holidays" element={<FormHolidays/>} />
       <Route path="/set-payment" element={<FormPayroll/>} />
-
+      <Route path="*" element={<PageNotFound/>} />
     </Routes>
 
-    <br/>
     <Footer />
     
   </div>

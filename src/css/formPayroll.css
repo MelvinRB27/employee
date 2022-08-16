@@ -1,5 +1,7 @@
 .containerFormEmployee{
     text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .ctnfholiday{
     margin: auto;
@@ -27,18 +29,25 @@
 
 .contenedorText {
 	margin: auto;
-	width: 500px;
+    display: inline;
+	width: 700px;
 	height: 40px;
-	color: rgb(38, 0, 255);
+	color: green;
 	font-size: 35px;
 	line-height: 40px;
-
-    margin-bottom: 3%;
 	overflow: hidden;
-	
+}
+
+.contenedorText.cHoliday{
+    color:blue
+}
+
+.contenedorText.cEmployee{
+    color:red
 }
 
 .contenedorText p {
 	margin: 0;
+    margin-bottom: 3%;
     font-variant: small-caps;
 }

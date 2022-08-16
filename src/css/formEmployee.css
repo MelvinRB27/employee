@@ -1,9 +1,11 @@
 .containerFormEmployee{
     text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
 .ctnfemployy{
     margin: auto;
-    width: 350px;
+    width: 490px;
     max-width: 490px;
     min-width: 320px;
 	box-shadow: 5px 20px 50px #000;
@@ -25,20 +27,30 @@
 }
 
 
+
 .contenedorText {
 	margin: auto;
-	width: 400px;
+    display: inline;
+	width: 700px;
 	height: 40px;
 	color: red;
 	font-size: 35px;
 	line-height: 40px;
 
-    margin-bottom: 3%;
 	overflow: hidden;
 	
 }
 
 .contenedorText p {
 	margin: 0;
+    margin-bottom: 3%;
     font-variant: small-caps;
+}
+
+@media (max-width: 840px) {
+    .ctnfemployy{
+        margin: auto;
+        width: 300px;
+        box-shadow: 5px 20px 50px #000;
+    }
 }

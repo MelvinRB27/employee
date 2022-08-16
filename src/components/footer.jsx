@@ -12,7 +12,7 @@ const Footer = () => {
                             <ul>
                                 <li><Link to="/employees">Adm. employees</Link></li>
                                 <li><Link to="/holidays">Adm. holidays</Link></li>
-                                <li><Link to="/payroll">Adm. payroll</Link></li>
+                                <li><Link to="/payrolls">Adm. payroll</Link></li>
                             </ul>
                         </div>
                         <div className="col-sm-6 col-md-3 item">
