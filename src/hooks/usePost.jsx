@@ -35,6 +35,10 @@ const PostApi = (data,url) => {
     .then(function (response) {
         console.log(response);
         successAlert("added successfully")
+        if (url === "/users"){
+            window.location.href = "/login"
+            return
+        }
         window.location.href = url
     })
     .catch(function (error) {

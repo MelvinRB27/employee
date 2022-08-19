@@ -31,7 +31,7 @@ const Login = () => {
     }
 
     return (
-        <div className="containerLogin">
+        <div className="containerLogin" data-aos="fade-left">
             <div className="main">  	
                 <input type="checkbox" id="chk" aria-hidden="true"/>
 

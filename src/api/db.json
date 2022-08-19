@@ -191,6 +191,12 @@
       "email": "melvin@gmail.com",
       "password": "2727",
       "id": 2
+    },
+    {
+      "user_name": "Melvin Jay",
+      "email": "melvinjay@gmail.com",
+      "password": "2727",
+      "id": 3
     }
   ]
 }

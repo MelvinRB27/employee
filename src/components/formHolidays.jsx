@@ -48,7 +48,7 @@ const FormHolidays = () => {
 
 
             <div className="ctnfholiday">
-                <form className="formHoliday form-control" onSubmit={formSubmit}>
+                <form className="formHoliday form-control" onSubmit={formSubmit} data-aos="flip-right">
                     <div className="cntILForm">
                         <label className="form-control-label" htmlFor="name">Selec employee</label>
 

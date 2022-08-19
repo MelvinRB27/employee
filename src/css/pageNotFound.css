@@ -1,6 +1,6 @@
 .containerPageNotFound{
-    height: 1300px;
-    background-color: black;
+    margin-top: 15%;
+    height: 500px;
 }
 
 
@@ -17,13 +17,22 @@
     animation: spin 1s ease infinite;
 }
 
+.spinerNotFound h1{
+  color: black;
+  font-size: 22px;
+}
+.spinerNotFound h6{
+  color: black;
+  font-size: 22px;
+}
+
 .linkHOME{
     margin: auto;
-    font-size: 100px;
+    font-size: 15px;
 }
 
 .ctnPNF {
-    font-size: 250px;
+    font-size: 35px;
     font-family:helvetica;
     font-weight:bold;
     text-transform:uppercase;

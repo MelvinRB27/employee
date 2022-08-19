@@ -34,7 +34,7 @@ const Payroll = () => {
                     <li className="btn btn-success" ><Link className="nav-link" to="/set-payment">Set payment</Link></li>
                 </ul>
             </div>
-            <div className="containerTable">
+            <div className="containerTable" data-aos="zoom-in-down">
                 <TableInfo url={url} title="/payrolls"/>
             </div>
         </div>

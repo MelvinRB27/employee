@@ -64,7 +64,7 @@ const FormEmployee = () => {
             </div>
 
             <div className="ctnfemployy">
-                <form className="formEmployee form-control" onSubmit={formSubmit}>
+                <form className="formEmployee form-control" onSubmit={formSubmit} data-aos="flip-right">
                     <div className="cntILForm">
                         <label className="form-control-label" htmlFor="name">Name</label>
                         <input className="form-control" type="text" name="name" placeholder="Name" required 

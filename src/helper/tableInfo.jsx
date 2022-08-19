@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 import '../css/tableInfo.css'
 import GetColumns from '../helper/getColumns'
@@ -45,7 +45,7 @@ const DataTable = ({ url, title }) => {
 
         <div>
           <button className="btn btn-danger" onClick={() => deleteRow()}>Delete</button>
-          <li className="btn btn-success"><Link className="nav-link" to="/">Update</Link></li>
+          {/* <li className="btn btn-success"><Link className="nav-link" to="/">Update</Link></li> */}
         </div>
       </div>
     </div>

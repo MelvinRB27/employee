@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div className="containerHome">
             <div>
-                <div className="ctnBannerHome">  
+                <div className="ctnBannerHome" data-aos="fade-left">  
                     <div className="ctnBannerImage">
                         <img loading="lazy" src={imgEmplyee} alt="img" />
                     </div>
@@ -19,7 +19,7 @@ const Home = () => {
                     </h1>
                 </div>
 
-                <div className="ctnBannerHome center">
+                <div className="ctnBannerHome center" data-aos="fade-up">
                     <div className="ctnBannerImage">
                         <img loading="lazy" src={imgHoliday} alt="img" />
                     </div>	
@@ -31,7 +31,7 @@ const Home = () => {
                     </h1>  	
                 </div>
 
-                <div className="ctnBannerHome">  	
+                <div className="ctnBannerHome" data-aos="fade-right">  	
                     <div className="ctnBannerImage">
                         <img loading="lazy" src={imgPayroll} alt="img" />
                     </div>	

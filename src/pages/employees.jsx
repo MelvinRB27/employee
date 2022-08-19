@@ -37,7 +37,7 @@ const Employees = () => {
                     <li className="btn btn-danger"><Link className="nav-link" to="/add-employees">Add employee</Link></li>
                 </ul>
             </div>
-            <div className="containerTable">
+            <div className="containerTable" data-aos="zoom-in-down">
                 <TableInfo url={url} title="/employees"/>
             </div>
         </div>

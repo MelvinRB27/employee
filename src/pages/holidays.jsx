@@ -36,7 +36,7 @@ const Holidays = () => {
                     <li className="btn btn-primary"><Link className="nav-link" to="/add-holidays">Add holiday</Link></li>
                 </ul>
             </div>
-            <div className="containerTable">
+            <div className="containerTable" data-aos="zoom-in-down">
                 <TableInfo url={url} title="/holidays"/>
             </div>
         </div>
