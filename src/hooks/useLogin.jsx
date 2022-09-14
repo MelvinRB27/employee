@@ -1,5 +1,6 @@
-import axios from "axios";
 import Swal from "sweetalert2"
+import { collection, query, where, getDocs } from "firebase/firestore";
+import {db} from "../firebaseDB"
 
 const GetLogin = (loginData) => {
 
@@ -20,38 +21,31 @@ const GetLogin = (loginData) => {
             text: msj,
         })
     }
-    const getBooks = async() =>{
-        await axios.get("http://localhost:3000/users")
-        .then(({data}) => { 
-            let i;
-            let emailUser;
 
-            for (i = 0; i < data.length; i++){
-                if (data[i].email === loginData.email) {
-                    emailUser = data[i]
+    const getUser = async () => {
 
-                }else if (loginData.email !== data[i].email && loginData.email.length > 0) {
-                    errorAlert("User not found")
+        const q = query(collection(db, "RegisterUser"), where("Email", "==", loginData.Email));        
+        const querySnapshot = await getDocs(q);
 
-                }else if(loginData.email === "") {
-                    errorAlert("fill in the missing data")
-                }
-            }
-
-            if (emailUser.email === loginData.email && emailUser.password === loginData.password) {
-                window.localStorage.setItem("loginData", JSON.stringify(data[i]))
+        if (querySnapshot.docs.length === 0) {
+            errorAlert("This user not exists");
+            return
+        }
+        
+        querySnapshot.forEach((doc) => {
+            
+            if(doc.data().Password === loginData.Password) {
+                window.localStorage.setItem("loginData", JSON.stringify(doc.data()))
                 successAlert("Successfully logged in")
-                window.location.href = '/'
-
-            }else if (emailUser.email === loginData.email && emailUser.password !== loginData.password) {
-                errorAlert("Incorrect password")
-
+                window.location.href = '/' 
+                return
             }
 
+            errorAlert("password is incorrect")
         })
-        .catch((e) => console.log(e))
     }
-    getBooks()
+    
+    getUser()
 
 }
 export default GetLogin;

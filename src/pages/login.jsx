@@ -1,8 +1,12 @@
 import "../css/login.css";
-import PostApi from "../hooks/usePost";
 import GetLogin from "../hooks/useLogin";
 import AlertSuccess from "../helper/alertSuccess";
 import { useState } from "react";
+import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+
+import {db} from "../firebaseDB"
+import Swal from "sweetalert2"
+
 
 const Login = () => {
 
@@ -11,18 +15,56 @@ const Login = () => {
     const [password, setPassword] = useState("")
 
     var registerData = {
-        "user_name": username,
-        "email": email,
-        "password": password
+        "UserName": username,
+        "Email": email,
+        "Password": password
     }
 
     var loginData = {
-        "email": email,
-        "password": password
+        "Email": email,
+        "Password": password
     }
 
-    const formSubmit = e => {
-        e.preventDefault(); //esto previene que el form se mande. 
+    const successAlert = (msj) =>{
+        Swal.fire({
+          icon: 'success',
+          title: msj,
+          showConfirmButton: false,
+          timer: 1500
+        })
+    }    
+
+    const errorAlert = (msj) =>{
+    
+        Swal.fire({
+        icon: 'error',
+            title: 'Oops...',
+            text: msj,
+        })
+    }
+
+    const formSubmitRegister = (e) => {
+        e.preventDefault();
+        const getUser = async () => {
+            const q = query(collection(db, "RegisterUser"), where("Email", "==", registerData.Email));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.docs.length > 0) {
+                errorAlert("This user already exists");
+                return
+            }
+
+            addDoc(collection(db, "RegisterUser"), registerData);
+            successAlert("User successfully registered");
+            window.location.reload();
+        }
+
+        getUser()
+       
+    };
+
+    const formSubmit = (e) => {
+        e.preventDefault();
     };
 
     var data = window.localStorage.getItem("loginData")
@@ -36,7 +78,7 @@ const Login = () => {
                 <input type="checkbox" id="chk" aria-hidden="true"/>
 
                     <div className="signup">
-                        <form onSubmit={formSubmit}>
+                        <form onSubmit={formSubmitRegister}>
                             <label htmlFor="chk" aria-hidden="true">Sign up</label>
                             <input type="text" name="txt" placeholder="User name" required 
                             
@@ -50,7 +92,7 @@ const Login = () => {
                             
                                 onChange={(event) => setPassword(event.target.value)}
                             />
-                            <button onClick={() => PostApi(registerData, "/users")}>Sign up</button>
+                            <button type="submit">Sign up</button>
                         </form>
                     </div>
 

@@ -1,28 +1,43 @@
-import * as React from 'react';
+import {useState} from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-// import {Link} from 'react-router-dom'
 
 import '../css/tableInfo.css'
 import GetColumns from '../helper/getColumns'
-import useApi from '../hooks/useGet'
 import DeleteEmployee from '../hooks/useDelete';
 
-const DataTable = ({ url, title }) => {
-  const [data, error] = useApi(url)
-  const columns = GetColumns(title)
-  const rows = data
+import { collection, getDocs} from "firebase/firestore";
+import { db } from "../firebaseDB"
 
-  var idRow; 
-  if (error) {
-    return console.error(error)
-  }
+const DataTable = ({ url, title }) => {
+  // const [data, error] = useApi(url)
+  const columns = GetColumns(title)
+  const [rows, setRows] = useState([])
+  const [idRow, setIdRow] = useState("")
+
+  
+  let rowss = []
+
+  const getdata = async () => {
+              
+    const querySnapshot = await getDocs(collection(db, url));
+    querySnapshot.forEach(doc => {
+    // doc.data() is never undefined for query doc snapshots
+    rowss.push(doc.data())
+
+    setRows(rowss)
+        // console.log(doc._document.data.value.mapValue.fields)
+    });
+
+  } 
+  getdata()
+
 
   const handleOnCellClick = (ok) => {
-    idRow = ok.row.id
+    setIdRow(ok.row.id)
   }
 
   const deleteRow = () => {
-    DeleteEmployee(title, idRow)
+    DeleteEmployee(idRow, url)
   }
 
   return (

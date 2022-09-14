@@ -1,13 +1,16 @@
 .containerEmployees{
     margin: auto;
+    margin-top: 3%;
     text-align: center;
     width: 100%;
     height: auto;
 }
 
-.inputSearch{
-    text-align: center;
-    font-variant: small-caps;
+.containerPayroll{
+    margin-top: 3%;
+}
+.containerHolidays{
+    margin-top: 3%;
 }
 
 .ctnList{

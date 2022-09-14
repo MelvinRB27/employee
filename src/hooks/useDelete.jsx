@@ -1,7 +1,11 @@
-import axios from "axios";
 import Swal from "sweetalert2"
+import { collection, getDocs, query, where, deleteDoc, doc} from "firebase/firestore";
+import { db } from "../firebaseDB"
 
-const DeleteEmployee = (url, id) => {
+const DeleteEmployee = (id, url) => {
+    let docID;
+
+    console.log(id)
 
     const errorAlert = (msj) =>{
     
@@ -19,18 +23,26 @@ const DeleteEmployee = (url, id) => {
           showConfirmButton: false,
           timer: 1500
         })
-    }   
+    }
 
-    axios.delete("http://localhost:3000"+url+"/"+id)
-    .then(({data}) => {
-        console.log(data)
-        successAlert("Row deleted successfully")
-        window.location.href = url
-    })
-    .catch((e) => {
-        console.log(e)
-        errorAlert("Error deleting row")
-        window.location.href = "/"
-    })
+
+    const getUser = async () => {
+        const q = query(collection(db, url), where("id", "==", id));
+        const querySnapshot = await getDocs(q);
+
+        querySnapshot.forEach((doc) => {
+            docID = doc.id
+        });
+
+        try {
+            await deleteDoc(doc(db, url, docID))
+            successAlert("row deleted successfully")
+        } catch (error) {
+            errorAlert("Could not delete, error: " + error)
+        }
+
+    }
+
+    getUser()
 }
 export default DeleteEmployee;

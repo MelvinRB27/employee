@@ -2,13 +2,12 @@ import "../css/employees.css"
 import TableInfo from "../helper/tableInfo"
 
 import {Link} from 'react-router-dom'
-import { useState } from "react"
 
 import AlertError from "../helper/alertErro"
 
 const Employees = () => {
     
-    const [url, setUrl] = useState("/employees")
+    const url = "EmployeeData"
 
     var data = window.localStorage.getItem("loginData")
     if(!data){
@@ -17,21 +16,6 @@ const Employees = () => {
 
     return (
         <div className="containerEmployees">
-            <div>
-                <br />
-                <div className='inputSearch'>
-                    <p>Filter by name</p>
-                    <input type="text" className='from-control' placeholder='Search' onChange={(event) => 
-                        { 
-                            setUrl("/employees?name="+event.target.value)
-                            if (event.target.value === ""){
-                                setUrl("/employees")
-                            }
-                        }
-                        }/>
-                    <button type="button" className="btn btn-outline-danger">Search</button>
-                </div>
-            </div>
             <div className="ctnList">
                 <ul className="">
                     <li className="btn btn-danger"><Link className="nav-link" to="/add-employees">Add employee</Link></li>

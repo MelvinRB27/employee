@@ -1,15 +1,28 @@
-import useApi from '../hooks/useGet'
+import { collection, getDocs} from "firebase/firestore";
+import { db } from "../firebaseDB"
+import { useState } from 'react';
 
-const SelectEmployee = (url) => {
-    const [data, error] = useApi(url)
+const SelectEmployee = () => {
+    const [data, setData] = useState([])
+    let rowss = [
+        {}
+    ]
 
-    if (error){
-        return console.error(error)
-    }
+    const getdata = async () => {
+              
+        const querySnapshot = await getDocs(collection(db, "EmployeeData"));
+        querySnapshot.forEach(doc => {
+        rowss.push(doc.data())
+    
+        setData(rowss)
+        });
+    
+      } 
+      getdata()
 
     var employee = document.getElementById("selectEmployee"); /* Para no tener que llamar a cada rato a getElementById */
-    for(let i=0; i<data.length; i++){
-        employee.options[i] = new Option(data[i].employee +"-"+ data[i].id_employee);
+    for(let i = 1; i < data.length; i++){
+        employee.options[i] = new Option(data[i]["First name"] +" - "+ data[i].id);
     }
 }
 

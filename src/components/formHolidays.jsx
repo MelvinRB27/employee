@@ -1,31 +1,33 @@
 import "../css/formHolidays.css"
 import SelectEmployee from "../helper/selectEmployee";
-import PostApi from "../hooks/usePost";
 
 import { useState } from "react";
 import {Link} from 'react-router-dom'
 import AlertError from "../helper/alertErro";
+import { collection, addDoc} from "firebase/firestore";
+import {db} from "../firebaseDB"
 
 const FormHolidays = () => {
 
     const [employee, setEmployee] = useState("")
-    const [id_employee, setIDEmployee] = useState("")
     const [starting_date, setStartingDate] = useState("")
     const [end_date, setEndDate] = useState("")
 
+    const generateId = Math.random().toString(10);
 
-    const url = "/holidays"
     var dataJson = {
-        "employee": employee,
-        "id_employee": id_employee,
-        "starting_date": starting_date,
-        "end_date": end_date
+        "id": generateId,
+        "Employee": employee,
+        "StartingDate": starting_date,
+        "EndDate": end_date
     }
-    SelectEmployee(url)
+    SelectEmployee()
 
-    const formSubmit = e => {
-        e.preventDefault(); //esto previene que el form se mande. 
-        PostApi(dataJson, url)
+    const formSubmit = async (e) => {
+        e.preventDefault();
+        await addDoc(collection(db, "HolidayData"), dataJson);
+        window.location.href = '/holidays'
+
     };
 
     var data = window.localStorage.getItem("loginData")
@@ -52,20 +54,9 @@ const FormHolidays = () => {
                     <div className="cntILForm">
                         <label className="form-control-label" htmlFor="name">Selec employee</label>
 
-                        <select id="selectEmployee" className="form-select" onChange={(event) => setEmployee(event.target.value)}>
-                            <option value="?"> Select a employee </option>
+                        <select id="selectEmployee" className="form-select"  onChange={(event) => setEmployee(event.target.value)}>
+                            <option value={employee} > {employee === "" ?  "Select an employee" : employee } </option>
                         </select>
-
-                    </div>
-
-                    <div className="cntILForm">
-                        <label className="form-control-label" htmlFor="id_employee">ID employee</label>
-                        <input className="form-control" type="text" name="id_employee" placeholder="ID employee" required 
-                        
-                            onChange={(event) => setIDEmployee(event.target.value)}
-
-                        
-                        />
                     </div>
 
                     <div className="cntILForm">

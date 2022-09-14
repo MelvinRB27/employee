@@ -20,7 +20,6 @@ const Footer = () => {
                             <ul>
                                 <li><Link to="/company">Company</Link></li>
                                 <li><Link to="/team">Team</Link></li>
-                                <li><Link to="/careers">Careers</Link></li>
                             </ul>
                         </div>
                         <div className="col-md-6 item text">
@@ -29,10 +28,6 @@ const Footer = () => {
                             This platform helps and allows the administrators of a company to have control of their employees, their data, vacations and payroll.
                             </p>
                         </div>
-                        <div className="col item social">
-                            <Link to="/"><i className="fa fa-facebook"></i></Link>
-                            <Link to="/"><i className="fa fa-twitter"></i></Link>
-                            <Link to="/"><i className="fa fa-instagram"></i></Link></div>
                     </div>
                     <p className="copyright">Employee manager © 2022</p>
                 </div>

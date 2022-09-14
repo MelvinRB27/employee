@@ -34,7 +34,7 @@
 }
 .containerLogin input{
 	width: 60%;
-	height: 20px;
+	height: 30px;
 	background: #e0dede;
 	justify-content: center;
 	display: flex;
@@ -42,7 +42,7 @@
 	padding: 10px;
 	border: none;
 	outline: none;
-	border-radius: 5px;
+	border-radius: 10px;
 }
 .containerLogin button{
 	width: 60%;
@@ -51,7 +51,7 @@
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #573b8a;
+	background: #3b8a6c;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -62,7 +62,7 @@
 	cursor: pointer;
 }
 .containerLogin button:hover{
-	background: #6d44b8;
+	background: #3b8a6c;
 }
 .login{
 	height: 460px;
@@ -72,7 +72,7 @@
 	transition: .8s ease-in-out;
 }
 .login label{
-	color: #573b8a;
+	color: #3b8a6c;
 	transform: scale(.6);
 }
 
